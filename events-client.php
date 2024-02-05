@@ -69,9 +69,9 @@ body {
 
 .card {
   max-width: 600px;
-  width: 100%;
-  padding: 20px;
-  border-radius: 10px;
+  width: 200%;
+  padding: 200px;
+  border-radius: 100px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   margin: 20px;
   text-align: center;
