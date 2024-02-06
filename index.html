@@ -6,40 +6,37 @@
   <title>YouthLink</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+/>
   <!-- jQuery-->
   <script src="path/to/jquery/jquery.min.js"></script>
   <script src="path/to/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
   <style>
-    
     /* Custom styles */
     body {
-      background-color: #FFFAA0;
+      background-color: #fffff6;
       font-family: Arial, sans-serif;
     }
     .navbar {
-      background-color: #F6BE00;
+      background-color: #f6be00;
     }
-    .container-modal {
-      width: 500px;
-      margin: 0 auto;
-      padding: 40px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
     .navbar-brand {
       color: #fff;
     }
     .nav-link {
       color: #fff;
     }
-    .jumbotron{
-      background-image: url('/background/bg1.png');
-    height: 300px;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
+    .jumbotron {
+      align-self: center;
+      background-color: #fffff6;
+      height: 300px;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
     }
     .jumbotron h1 {
       font-size: 48px;
@@ -65,12 +62,14 @@
       color: #777;
     }
     .footer {
-      background-color: #F6BE00;
+      position: relative;
+      background-color: #f6be00;
       color: #ffffff;
       padding: 5px 0;
       text-align: center;
       bottom: 0;
       width: 100%;
+      padding-block: 10px;
     }
     /* Add animation class for fade-in effect */
     .fade-in {
@@ -83,84 +82,153 @@
       transform: translateY(0);
     }
     /* Create a CSS Grid for the collage layout */
-.image-collage {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns as needed */
-    grid-gap: 10px; /* Adjust the gap between items */
-}
-
-/* Style each image item */
-.image-item {
-    position: relative;
-}
-
-/* Style the image within the item */
-.image-item img {
-    max-width: 100%;
-    height: 100%;
-    display: block;
-    border: 2px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/*  Form CSS */
-   /* .form-group {
-      margin-bottom: 15px;
+    .image-collage {
+      display: grid;
+      grid-template-columns: repeat(
+        2,
+        1fr
+      ); /* Adjust the number of columns as needed */
+      grid-gap: 10px; /* Adjust the gap between items */
     }
-
-    .form-group label {
+    /* Style each image item */
+    .image-item {
+      position: relative;
+    }
+    /* Style the image within the item */
+    .image-item img {
+      max-width: 100%;
+      height: 100%;
       display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #4c0000;
+      border: 2px solid #ccc;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-
-    .form-group select {
-      width: 50%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-top: 5px; 
-    } */
-
-      /* Style for the label */
-    
-      .form-group label {
+    .form-group label {
       font-weight: bold;
       margin-bottom: 5px;
     }
-
-   /* .form-group input {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    .form-group .sign-up {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .form-group a {
-      color: #6495ed;
-      text-decoration: none;
-    }
-
-    .form-group a:hover {
-      color: #000080;
-    }  */
-
-
     .font-size-12 {
       font-size: 12px;
     }
-
     .font-color-main {
       color: #4c0000;
     }
+    /* Carousel */
+    .display-area {
+      width: 100%;
+      max-width: 970px;
+      overflow-x: hidden;
+      margin: auto;
+    }
+    .card {
+      height: 400px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 4px;
+      color: white;
+      font-size: 40px;
+      margin: 10px;
+      flex: 800px 0 0;
+    }
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-size: cover;
+    }
+    .cards-wrapper {
+      display: flex;
+      transition: ease 0.5s;
+    }
+    .dots-wrapper {
+      display: none;
+      justify-content: center;
+      margin: auto;
+    }
+    .wrapper {
+      max-width: 1110px;
+      margin-inline: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .jumbotron-wrapper {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .jumbotron-wrapper img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .jumbotron-wrapper .jumbotron-text {
+      position: relative;
+      top: 30%;
+      left: 8%;
+      z-index: 4;
+    }
+    .item {
+      height: 500px;
+    }
+    .carousel-indicators li {
+      margin-inline: 6px;
+    }
 
+    .footer {
+      padding: 0;
+      background-color: #fffaa0;
+    }
+    .footer-about-us {
+      padding: 40px;
+      color: black;
+
+      width: 1110px;
+      margin-inline: auto;
+    }
+
+    .footer-bottom-text {
+      padding: 20px;
+      bottom: 0;
+      background-color: #f6be00;
+    }
+    .need-help {
+      text-align: left;
+    }
+    .footer-cards {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 40px;
+    }
+    .footer-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 50%;
+    }
+
+    .footer-card-item {
+      display: flex;
+      flex-direction: column;
+      width: 100px;
+      gap: 10px;
+    }
+
+    .footer-card-label {
+      font-weight: semibold;
+      font-size: 20px;
+    }
+
+    .heavy {
+      font-weight: bold;
+    }
+
+    .navbar-buttons {
+      float: right;
+    }
   </style>
 </head>
 <body>
@@ -369,61 +437,132 @@
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="index.html">You✞hLink</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto navbar-buttons">
           <li class="nav-item">
-            <a class= "nav-link" href="#" data-toggle="modal" data-target="#loginModal">Log in</a>
+            <a
+              class="nav-link"
+              href="#"
+              data-toggle="modal"
+              data-target="#loginModal"
+              >Log in</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.html">About us</a>
+            <a class="nav-link" href="#about">About us</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Jumbotron -->
-  <div class="jumbotron">
-    <div class="container">
-      <h1>Welcome to YouthLink</h1>
-      <p>Web-based Events Management System for Lipa Archdiocesan Youth Ministry - Formation Team</p>
+  <div class="wrapper">
+    <div class="jumbotron-wrapper">
+      <img src="./assets/images/try1.png" alt="" />
+      <div class="jumbotron-text">
+        <h1>Welcome to YouthLink</h1>
+        <p>
+          Web-based Events Management System for Lipa Archdiocesan Youth
+          Ministry - Formation Team
+        </p>
+      </div>
+    </div>
+    <div>
+      <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li
+              data-target="#myCarousel"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="./assets/images/carousel1.jpg" alt="" />
+            </div>
+            <div class="item">
+              <img src="./assets/images/carousel2.jpg" alt="" />
+            </div>
+            <div class="item">
+              <img src="./assets/images/carousel3.jpg" alt="" />
+            </div>
+            <div class="item">
+              <img src="./assets/images/carousel4.jpg" alt="" />
+            </div>
+            <div class="item">
+              <img src="./assets/images/carousel5.jpg" alt="" />
+            </div>
+            <div class="item">
+              <img src="./assets/images/carousel6.jpg" alt="" />
+            </div>
+          </div>
+          <!-- Left and right controls -->
+          <a
+            class="left carousel-control"
+            href="#myCarousel"
+            data-slide="prev"
+          >
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="right carousel-control"
+            href="#myCarousel"
+            data-slide="next"
+          >
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
-  <!-- Main Content -->
-   <div class="image-collage">
-        <div class="image-item">
-            <img src="/images/11.jpg" alt="Image 1">
-        </div>
-
-        <div class="image-item">
-            <img src="/images/2.jpg" alt="Image 2">
-        </div>
-
-        <div class="image-item">
-            <img src="/images/3.jpg" alt="Image 3">
-        </div>
-
-        <div class="image-item">
-            <img src="/images/4.jpg" alt="Image 3">
-        </div>
-
-        <div class="image-item">
-            <img src="/images/5.jpg" alt="Image 3">
-        </div>
-
-        <div class="image-item">
-            <img src="/images/6.jpg" alt="Image 3">
-        </div>
-        <!-- Add more image items as needed -->
-    </div>
-    <br>
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2023 YouthLink. All rights reserved.</p>
+  <footer class="footer" id="about">
+    <div class="footer-about-us">
+      <div class="need-help">Need Help? Contact Us</div>
+      <div class="footer-cards">
+        <div class="footer-card">
+          <div class="footer-card-label">Our Address</div>
+          <div>Lipa, Batangas</div>
+        </div>
+
+        <div class="footer-card">
+          <div class="footer-card-label">Email Us</div>
+          <div>laym.formationteam@egmail.com</div>
+        </div>
+        <div class="footer-card">
+          <div class="footer-card-label">Call Us</div>
+          <div>+63 912 345 6789</div>
+        </div>
+        <div class="footer-card">
+          <div class="footer-card-label">Opening Hours</div>
+          <div><span class="heavy">Mon-Fri:</span> 9:00 AM - 5:00 PM</div>
+          <div><span class="heavy">Sat-Sun:</span> Closed</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom-text">
+      © 2023 YouthLink. All rights reserved.
     </div>
   </footer>
 
