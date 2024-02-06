@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Incorrect credentials, show an error message or redirect back to the login page
         echo "<script>alert('Invalid username, organization, or password. Please try again.');</script>";
-        echo "<script>window.location.href = 'Log_in_page.html';</script>";
+        echo "<script>window.location.href = 'index.html';</script>";
         
     }
 

@@ -80,15 +80,14 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index-member.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="events-member.php">Events</a>
           </li>
           <li class="dropdown">
             <a class="nav-link dropdown-toggle username" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <?php echo $row["name"]?>
-                <?php echo $row["organization"]?>
+                <?php echo $row["firstname"]?>
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="<?php echo ($row["organization"] === 'admin') ? 'profile-member.php' : 'profile_client.php'; ?>">Profile</a>
