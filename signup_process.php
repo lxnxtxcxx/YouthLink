@@ -14,7 +14,8 @@ if ($conn->connect_error) {
 }
 
 // Get form data
-$Full_Name = $_POST['name'];
+$Full_Name = $_POST['firstname'];
+$Last_Name = $_POST['lastname'];
 $Username = $_POST['username'];
 $organization = $_POST['organization'];
 $vicariate = $_POST['vicariate'];
@@ -24,7 +25,7 @@ $Contact_no = $_POST['cnumber'];
 $Password = $_POST['password'];
 
 // Insert data into the database
-$sql = "INSERT INTO user_data (name, username, organization, vicariate, parish, email, cnumber, Password) VALUES ('$Full_Name', '$Username', '$organization', '$vicariate', '$parish', '$Email_address', '$Contact_no', '$Password')";
+$sql = "INSERT INTO user_data (firstname, lastname, username, organization, vicariate, parish, email, cnumber, Password) VALUES ('$Full_Name', '$Last_Name', '$Username', '$organization', '$vicariate', '$parish', '$Email_address', '$Contact_no', '$Password')";
 
 if ($conn->query($sql) === TRUE) {
     echo "<script>alert('Account created successfully!');</script>";

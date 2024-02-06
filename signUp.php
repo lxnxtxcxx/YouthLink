@@ -90,16 +90,20 @@
     <form id="signup-form" action="signup_process.php" method="post">
       <h2>Sign Up</h2>
       <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required>
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First Name" required>
+      </div>
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last Name" required>
       </div>
       <div class="form-group">
         <label for="email">Email Address</label>
-        <input type="text" id="email" name="email" required>
+        <input type="text" id="email" name="email" class="form-control" placeholder="(ex.) email@gmail.com" required>
       </div>
        <div class="form-group">
         <label for="cnumber">Contact Number</label>
-        <input type="text" id="cnumber" name="cnumber" required>
+        <input type="text" id="cnumber" name="cnumber" class="form-control" placeholder="(ex.) 09212345678" required>
       </div>
       <div class="form-group">
         <label for="organization">Organization</label>
