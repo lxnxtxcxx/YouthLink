@@ -92,7 +92,10 @@ if ($result->num_rows > 0) {
 </head>
 <body>
   <!-- Navigation bar -->
-  <?php include 'header.php'; ?>
+  <?php
+      include 'header.php';
+      include 'nav-bar/user-nav-bar.php';
+  ?>
   <!-- <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="index_client.php">YouthLink</a>

@@ -29,7 +29,7 @@ $sql = "INSERT INTO user_data (firstname, lastname, username, organization, vica
 
 if ($conn->query($sql) === TRUE) {
     echo "<script>alert('Account created successfully!');</script>";
-    echo "<script>window.location.href = 'Log_in_page.html';</script>";
+    echo "<script>window.location.href = 'index.php';</script>";
     exit(); // Ensure that no more output is sent to the browser after the redirect header
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

@@ -30,6 +30,7 @@ if ($result->num_rows > 0) {
   }
   ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,15 +39,15 @@ if ($result->num_rows > 0) {
   <title>YouthLink</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <style>
+    <style>
     
     /* Custom styles */
     body {
-      background-color: #DCF2F1;
+      background-color: #FFFAA0;
       font-family: Arial, sans-serif;
     }
     .navbar {
-      background-color: #7FC7D9;
+      background-color: #F6BE00;
     }
     .navbar-brand {
       color: #fff;
@@ -126,75 +127,14 @@ if ($result->num_rows > 0) {
   </style>
 </head>
 <body>
-
-  <?php include 'header.php'; ?>
+  
   <!-- Navigation -->
-  <!-- <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="index-member.php">YouthLink</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index-member.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="events-member.php">Events</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="files-member.php">Files</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="appointment-member.php">Appointment</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="profile-member.php"><?php echo $row["username"]?></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Sign Out</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
-
-  <!-- Jumbotron -->
-  <div class="jumbotron">
-    <div class="container">
-      <h1>Welcome to Youthlink</h1>
-      <p>Web-based Events Management System for Lipa Archdiocesan Youth Ministry - Formation Team</p>
-    </div>
-  </div>
-  <!-- Main Content -->
-   <div class="image-collage">
-        <div class="image-item">
-            <img src="/images/11.jpg" alt="Image 1">
-        </div>
-
-        <div class="image-item">
-            <img src="/images/2.jpg" alt="Image 2">
-        </div>
-
-        <div class="image-item">
-            <img src="/images/3.jpg" alt="Image 3">
-        </div>
-
-        <div class="image-item">
-            <img src="/images/4.jpg" alt="Image 3">
-        </div>
-
-        <div class="image-item">
-            <img src="/images/5.jpg" alt="Image 3">
-        </div>
-
-        <div class="image-item">
-            <img src="/images/6.jpg" alt="Image 3">
-        </div>
-        <!-- Add more image items as needed -->
-    </div>
-    <br>
+  <?php 
+    include 'header.php';
+    include 'nav-bar/user-nav-bar.php';
+    include 'body.php';
+  ?>
+  
   <!-- Footer -->
   <footer class="footer">
     <div class="container">

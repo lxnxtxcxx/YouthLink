@@ -5,8 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YouthLink</title>
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+  <!-- Custom CSS File-->
+  <link rel="stylesheet" href="stylesheet.css">
+
   <!-- jQuery-->
   <script src="path/to/jquery/jquery.min.js"></script>
   <script src="path/to/bootstrap/js/bootstrap.min.js"></script>
@@ -14,11 +19,6 @@
 
   <style>
     /* Custom styles */
-    body {
-      background-color: #fffff6;
-      font-family: Arial, sans-serif;
-    }
-
     .navbar {
       background-color: #f6be00;
     }
@@ -69,16 +69,6 @@
       color: #777;
     }
 
-    .footer {
-      position: relative;
-      background-color: #f6be00;
-      color: #ffffff;
-      padding: 5px 0;
-      text-align: center;
-      bottom: 0;
-      width: 100%;
-      padding-block: 10px;
-    }
 
     /* Add animation class for fade-in effect */
     .fade-in {
@@ -284,7 +274,7 @@
 
   $conn = new mysqli($servername, $dbUsername, $dbPassword, $dbname);
 
-  $all_organization_sql = "SELECT * FROM `organization`";
+  $all_organization_sql = "SELECT * FROM `organization` where organization_type <> 'admin' ";
   $all_organization = mysqli_query($conn, $all_organization_sql);
 
   $all_parish_sql = "SELECT * FROM `parish`";
@@ -308,27 +298,6 @@
               <label for="password" class="col-sm-2 col-form-label font-color-main">Password:</label>
               <div class="col-sm-9">
                 <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-              </div>
-            </div>
-            <div class="form-group row justify-content-between">
-              <label for="organization" class="col-sm-2 col-form-label font-color-main">Organization:</label>
-              <div class="col-sm-9">
-                <select id="organization" name="organization" class="form-control" required>
-                  <?php
-                  while ($organization = mysqli_fetch_array(
-                    $all_organization,
-                    MYSQLI_ASSOC
-                  )) :;
-                  ?>
-                    <option value="<?php echo $organization["organization_type"];
-                                    ?>">
-                      <?php echo $organization["organization_type"];;
-                      ?>
-                    </option>
-                  <?php
-                  endwhile;
-                  ?>
-                </select>
               </div>
             </div>
             <div class="form-group">
@@ -355,9 +324,11 @@
   <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-        <div class="modal-body">
+        <div class="modal-body p-4">
           <form id="signup-form" action="signup_process.php" method="post">
-            <h2>Sign Up</h2>
+            <div class="form-group">
+              <h2>Sign Up</h2>
+            </div>
             <div class="form-group row justify-content-between">
               <label for="firstname" class="col-sm-2 col-form-label font-color-main">First Name</label>
               <div class="col-sm-9">
@@ -376,10 +347,10 @@
                 <input type="text" id="email" name="email" class="form-control" placeholder="(ex.) email@gmail.com" required>
               </div>
             </div>
-            <div class="form-group  row justify-content-between">
+            <div class="form-group row justify-content-between">
               <label for="cnumber" class="col-sm-2 col-form-label font-color-main">Contact No.</label>
               <div class="col-sm-9">
-                <input type="text" id="cnumber" name="cnumber" class="form-control" placeholder="(ex.) 09212345678" required>
+                <input type="text" id="cnumber" name="cnumber" class="form-control" placeholder="(ex.) 09212345678" maxlength="11" pattern="09\d{9}" title="Please enter a valid phone number starting with '09'" required>
               </div>
             </div>
             <div class="form-group row justify-content-between">
@@ -390,7 +361,7 @@
                   mysqli_data_seek($all_organization, 0);
                   while ($organization = mysqli_fetch_array($all_organization, MYSQLI_ASSOC)) :;
                   ?>
-                    <option value="<?php echo $organizations["organization_type"]; ?>">
+                    <option value="<?php echo $organization["organization_type"]; ?>">
                       <?php echo $organization["organization_type"]; ?>
                     </option>
                   <?php endwhile ?>
@@ -441,18 +412,18 @@
             <div class="form-group  row justify-content-between">
               <label for="username" class="col-sm-2 col-form-label font-color-main">Username </label>
               <div class="col-sm-9">
-              <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required>
-  
+                <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required>
+
               </div>
             </div>
             <div class="form-group  row justify-content-between">
               <label for="password" class="col-sm-2 col-form-label font-color-main">Password</label>
               <div class="col-sm-9">
-              <input type="text" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+                <input type="text" id="password" name="password" class="form-control" placeholder="Enter your password" required>
               </div>
             </div>
-            <div class="form-group d-block w-50">
-              <button type="submit" class="btn btn-outline-primary mx-auto">Sign Up</button>
+            <div class="form-group d-block w-100 text-center">
+              <button type="submit" class="btn btn-outline-primary mx-auto" style="width: 500px;">Sign Up</button>
             </div>
           </form>
         </div>

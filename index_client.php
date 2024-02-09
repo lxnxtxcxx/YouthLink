@@ -129,73 +129,12 @@ if ($result->num_rows > 0) {
 <body>
   
   <!-- Navigation -->
-  <?php include 'header.php'; ?>
-  <!-- <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="index_client.php">YouthLink</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index_client.php">Home</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="events-client.php">Events</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="files-client.php">Files</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="appointment-client.php">Appointment</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="profile_client.php"><?php echo $row["username"]?></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Sign Out</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
-
-  <!-- Jumbotron -->
-  <div class="jumbotron">
-    <div class="container">
-      <h1>Welcome to Youthlink</h1>
-      <p>Web-based Events Management System for Lipa Archdiocesan Youth Ministry - Formation Team</p>
-    </div>
-  </div>
-  <!-- Main Content -->
-   <div class="image-collage">
-        <div class="image-item">
-            <img src="/images/1.jpg" alt="Image 1">
-        </div>
-
-        <div class="image-item">
-            <img src="/images/2.jpg" alt="Image 2">
-        </div>
-
-        <div class="image-item">
-            <img src="/images/3.jpg" alt="Image 3">
-        </div>
-
-        <div class="image-item">
-            <img src="/images/4.jpg" alt="Image 3">
-        </div>
-
-        <div class="image-item">
-            <img src="/images/5.jpg" alt="Image 3">
-        </div>
-
-        <div class="image-item">
-            <img src="/images/6.jpg" alt="Image 3">
-        </div>
-        <!-- Add more image items as needed -->
-    </div>
-    <br>
+  <?php 
+    include 'header.php';
+    include 'nav-bar/user-nav-bar.php';
+    include 'body.php';
+  ?>
+  
   <!-- Footer -->
   <footer class="footer">
     <div class="container">

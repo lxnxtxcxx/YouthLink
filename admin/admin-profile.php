@@ -23,11 +23,7 @@ if (!isset($_SESSION['id'])) {
 $id = $_SESSION['id'];
 
 // Fetch data for the current user
-$sql = "SELECT * FROM admin_data WHERE id = $id";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-  }
+$sql = "SELECT * FROM user_data WHERE id = $id";
   ?>
 <!-- profile.html -->
 <!DOCTYPE html>
@@ -143,7 +139,10 @@ if ($result->num_rows > 0) {
 </head>
 <body>
   <!-- Navigation bar -->
-  <?php include 'header.php'; ?>
+  <?php 
+    include '../header.php';
+    include '../nav-bar/admin-nav-bar.php';
+  ?>
   <!-- <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand" >You✞hLink</a>
@@ -170,31 +169,7 @@ if ($result->num_rows > 0) {
   </nav> -->
 
   <?php
-
-$servername = "localhost";
-$dbUsername = "root";
-$dbPassword = "";
-$dbname = "youthlink";
-
-// Create connection
-$conn = new mysqli($servername, $dbUsername, $dbPassword, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Check if 'id' is set in the session
-if (!isset($_SESSION['id'])) {
-    echo "No user ID found in the session.";
-    exit;
-}
-
-$id = $_SESSION['id'];
-
-// Fetch data for the current user
-$sql = "SELECT * FROM admin_data WHERE id = $id";
-$result = $conn->query($sql);
+      $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();

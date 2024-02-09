@@ -23,7 +23,7 @@ if (!isset($_SESSION['id'])) {
 $id = $_SESSION['id'];
 
 // Fetch data for the current user
-$sql = "SELECT * FROM admin_data WHERE id = $id";
+$sql = "SELECT * FROM user_data WHERE id = $id";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
@@ -98,71 +98,54 @@ background-color: #f2f2f2;
   </style>
 </head>
 <body>
+  
   <!-- Navigation bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" >YouthLink</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item ">
-            <a class="nav-link" href="appointment_list.php">Appointment List</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="member_list.php">Member List</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="admin-profile.php"><?php echo $row["username"]?></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Sign Out</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php 
+    include "../header.php";
+    include  '../nav-bar/admin-nav-bar.php';
 
-  <?php
-$servername = "localhost";
-$dbUsername = "root";
-$dbPassword = "";
-$dbname = "youthlink";
+    $servername = "localhost";
+    $dbUsername = "root";
+    $dbPassword = "";
+    $dbname = "youthlink";
 
-// Create connection
-$conn = new mysqli($servername, $dbUsername, $dbPassword, $dbname);
+    // Create connection
+    $conn = new mysqli($servername, $dbUsername, $dbPassword, $dbname);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-// SQL query to fetch data from the database
-$sql = "SELECT * FROM user_data";
-$result = $conn->query($sql);
+    // SQL query to fetch data from the database
+    $sql = "SELECT * FROM user_data where organization <> 'admin' ";
+    $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    // Display the table and table headings
-echo "<div class='client-list-container'><table class='client-list-table'><tr><th>ID</th><th>Name</th><th>Username</th><th>Organization</th><th>Vicariate</th><th>Parish</th><th>Email</th><th>Contact Number</th><th>Password</th></tr>";
+    if ($result->num_rows > 0) {
+        // Display the table and table headings
+    echo "<div class='client-list-container'><table class='client-list-table'><tr><th>ID</th><th>Name</th><th>firstname</th><th>lastname</th><th>Organization</th><th>Vicariate</th><th>Parish</th><th>Email</th><th>Contact Number</th><th>Password</th></tr>";
 
-// Loop through each row and display the data
-while ($row = $result->fetch_assoc()) {
-    echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td><td>" . $row["username"] . "</td><td>" . $row["organization"] . "</td><td>" . $row["vicariate"] . "</td><td>" . $row["parish"] . "</td><td>" . $row["email"] . "</td><td>" . $row["cnumber"] . "</td><td>" . $row["password"] . "</td></tr>";
-}
+    // Loop through each row and display the data
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr><td>" . $row["id"] . "</td><td>" . $row["firstname"] . "</td><td>" . $row["lastname"] . "</td><td>" . $row["username"] . "</td><td>" . $row["organization"] . "</td><td>" . $row["vicariate"] . "</td><td>" . $row["parish"] . "</td><td>" . $row["email"] . "</td><td>" . $row["cnumber"] . "</td><td>" . $row["password"] . "</td></tr>";
+    }
 
 
-    // Close the table and container
-    echo "</table></div>";
-} else {
-    echo "0 results";
-}
+        // Close the table and container
+        echo "</table></div>";
+    } else {
+        echo "0 results";
+    }
 
-// Close connections
-$conn->close();
-?>
+    // Close connections
+    $conn->close();
+    ?>
 
 <script>
+  function refreshPage() {
+    location.reload(true);
+}
+
     var sortOrder = {}; // Store sorting order for each column
 
     // Function to sort table data

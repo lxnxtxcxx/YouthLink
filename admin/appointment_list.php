@@ -23,7 +23,7 @@ if (!isset($_SESSION['id'])) {
 $id = $_SESSION['id'];
 
 // Fetch data for the current user
-$sql = "SELECT * FROM user_data WHERE id = $id";
+$sql = "SELECT * FROM admin_data WHERE id = $id";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
@@ -100,7 +100,10 @@ background-color: #f2f2f2;
 </head>
 <body>
   <!-- Navigation bar -->
-  <?php include 'header.php'; ?>
+  <?php 
+    include '../header.php';
+    include '../nav-bar/admin-nav-bar.php';
+  ?>
   <!-- <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand" >YouthLink</a>
@@ -163,6 +166,9 @@ $conn->close();
 ?>
 
 <script>
+    function refreshPage() {
+    location.reload(true);
+}
     var sortOrder = {}; // Store sorting order for each column
 
     // Function to sort table data

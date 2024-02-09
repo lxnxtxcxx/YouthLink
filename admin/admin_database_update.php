@@ -26,7 +26,7 @@ $username = $_POST['username'];
 $password = $_POST['password']; 
 
 // Update user data in the database
-$sql = "UPDATE admin_data SET  username='$username', password='$password' WHERE id=$id";
+$sql = "UPDATE user_data SET  username='$username', password='$password' WHERE id=$id";
 
 if ($conn->query($sql) === TRUE) {
     echo "Profile updated successfully.";

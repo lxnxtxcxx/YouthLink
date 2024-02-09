@@ -147,7 +147,10 @@ if ($result->num_rows > 0) {
 <body>
 
   <!-- Navigation bar -->
-  <?php include 'header.php'; ?>
+  <?php
+    include 'header.php';
+    include 'nav-bar/user-nav-bar.php';
+  ?>
   <!-- <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="index_client.php">YouthLink</a>
@@ -216,9 +219,14 @@ if ($result->num_rows > 0) {
 
     // Profile cards
     echo "<div class='profile-card'>";
-    echo "<div class='profile-label'>Full Name:</div>";
-    echo "<div class='profile-info' id='profileFullName'>" . $row["name"] . "</div>";
+    echo "<div class='profile-label'>First Name:</div>";
+    echo "<div class='profile-info' id='profileFirstName'>" . $row["firstname"] . "</div>";
     echo "</div>";
+
+  echo "<div class='profile-card'>";
+  echo "<div class='profile-label'>Last Name:</div>";
+  echo "<div class='profile-info' id='profileLastName'>" . $row["lastname"] . "</div>";
+  echo "</div>";
 
     echo "<div class='profile-card'>";
     echo "<div class='profile-label'>Username:</div>";
@@ -263,17 +271,21 @@ if ($result->num_rows > 0) {
     // Edit Profile Form
     echo "<form class='edit-form' id='editProfileForm'>";
     echo "<div class='form-group'>";
-    echo "<label for='fullName'>Full Name:</label>";
-    echo "<input type='text' class='form-control' id='fullName' value='" . $row["name"] . "'>";
+    echo "<label for='firstname'>First Name:</label>";
+    echo "<input type='text' class='form-control' id='firstname' value='" . $row["firstname"] . "'>";
+    echo "</div>";
+    echo "<div class='form-group'>";
+    echo "<label for='lastname'>Last Name:</label>";
+    echo "<input type='text' class='form-control' id='lastname' value='" . $row["lastname"] . "'>";
     echo "</div>";
     echo "<div class='form-group'>";
     echo "<label for='username'>Username:</label>";
     echo "<input type='text' class='form-control' id='username' value='" . $row["username"] . "'>";
     echo "</div>";
     echo "<div class='form-group'>";
-echo "<label for='organization'>Organization:</label>";
-echo "<select id='organization' name='organization' class='form-control' required>";
-$organizations = array("Parish", "School", "Formation Team");
+    echo "<label for='organization'>Organization:</label>";
+    echo "<select id='organization' name='organization' class='form-control' required>";
+    $organizations = array("Parish", "School", "Formation Team");
 
 foreach ($organizations as $organization) {
     echo "<option value='" . $organization . "'>" . $organization . "</option>";
