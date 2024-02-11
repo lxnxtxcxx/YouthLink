@@ -40,24 +40,13 @@ if ($result->num_rows > 0) {
   <title>Events</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheet.css">
   <style>
     /* Custom styles */
 body {
   background-color: #f8f8f8;
   color: #333333;
   margin-bottom: 60px;
-}
-
-.navbar {
-  background-color: #F6BE00;
-}
-
-.navbar-brand {
-  color: #fff;
-}
-
-.nav-link {
-  color: #fff;
 }
 
 .card-container {
@@ -83,7 +72,6 @@ body {
   justify-content: center;
   align-items: center;
 
- 
 }
 
 /* Table Styles */
@@ -160,119 +148,119 @@ tr:hover {
       </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>Youth Encounter (Virac Model)</td>
-      <td>3-day scripture-based formation program under the supervision of the CBCP-ECY that seeks to form the youth and those working with the youth into community builders for the church and the society.</td>
-      <td>16yrs old & above</td>
-      <td>3 days</td>
-      <td>Php 80.00/kit</td>
-    </tr>
-    <tr>
-      <td>Pencil Retreat</td>
-      <td>2-day scripture-based retreat module, developed by Rev. Fr. Glenn Cantos and the youth ministers of Lipa, that aims to let "all the young people who will undergo this formation understand and experience deeply God's loving compassion and bring you to a greater appreciation of a special gift that He has given you: the gift of life! (Most. Rev. Rolando J. Tria Tirona, OCD, DD - Bishop Chairman-ECY 1999)"</td>
-      <td>Grade 10 & above</td>
-      <td>2 days</td>
-      <td>Php 80.00/kit</td>
-    </tr>
-    <tr>
-      <td>Journey Recollection</td>
-      <td>A recollection module that is guided by the story of the two disciples going to a village called Emmaus. This module aims to help the participants reflect on their everyday journey as an individual and how they relate to people they meet on the road.</td>
-      <td>Grade 9 & above</td>
-      <td>1 day</td>
-      <td>Php 40.00/kit</td>
-    </tr>
-    <tr>
-      <td>Hands Recollection</td>
-      <td>A module that is intended to let the young people reflect about themselves, their relationship towards people around them and how it affects being who they are; that God never intended man to be alone</td>
-      <td>Grade 7 & above</td>
-      <td>1 day</td>
-      <td>Php 40.00/kit</td>
-    </tr>
-    <tr>
-      <td>Rich Young Man Retreat</td>
-      <td>1-2-day scripture-based module that focused on the appreciation of God-given talents, friends and God Rich Young Man Retreat Himself over the material things the world is offering right now.</td>
-      <td>Grade 12 & above</td>
-      <td>2 days</td>
-      <td>Php 80.00/kit</td>
-    </tr>
-    <tr>
-      <td>Samaritan Recollection</td>
-      <td>A scripture-based module that seeks to understand the story of the Samaritan woman and the leper and how Jesus works in their life as how Jesus works in our life today.</td>
-      <td>Those who have undergone different formation modules / 3rd year college to young professionals.</td>
-      <td>1 day</td>
-      <td>Php 40.00/kit</td>
-    </tr>
-    <tr>
-      <td>Life is a Gift Recollection</td>
-      <td>A scripture-based module that aims to let the young people appreciate life and make them realize that life Grade 10 or Grade 12 is really a gift from God.</td>
-      <td>Grade 10 or Grade 12</td>
-      <td>1 day</td>
-      <td>Php 40.00/kit</td>
-    </tr>
-    <tr>
-      <td>Treasure of Joy Recollection</td>
-      <td>A non-scripture based module that aims to help the participants discover their own treasure and make them reflect on it</td>
-      <td>Grade 6 and below</td>
-      <td>1 day</td>
-      <td>Php 40.00/kit</td>
-    </tr>
-    <tr>
-      <td>Kerygmatic Retreat</td>
-      <td>A scripture-based retreat module which serves as the culminating activity of those who completed the Youth Encounter 2 also known as Youth on Paschal Exodus (YOPE)</td>
-      <td>Those who have undergone YOPE</td>
-      <td>4 days</td>
-      <td>Php 80.00/kit</td>
-    </tr>
-    <tr>
-      <td>Bible Camp</td>
-      <td>A camp module that tackles the basic things about the Bible. Aims to help the participants to get into themselves and reflect on it by going through the 12 station called A Travel to the Holy Land.</td>
-      <td>Parish Youth/Campus Ministry</td>
-      <td>2-3 days / 3 consecutive weeks (2 sessions)</td>
-      <td>Php 80.00/kit</td>
-    </tr>
-     <tr>
-        <td>Bibliodrama</td>
-        <td>Aims to help the participants to get into themselves and reflect on it by going through the 12 station called A Travel to the Holy Land.</td>
-        <td>Grade 8 and above</td>
-        <td>2-3 days / 3 consecutive weeks (2 sessions)</td>
-        <td>Php 80.00/kit</td>
-      </tr>
-    <tr>
-      <td>LAKBAY-KALIS</td>
-      <td>A series of sessions that aim to make the participant understand the Journey of the Youth in the Parish - Kabataang Lingkod ng Inang Simbahan (KaLIS)</td>
-      <td>Parish Youth/Campus Ministry</td>
-      <td>13 consecutive weeks / 3 days</td>
-      <td>Php 80.00/kit</td>
-    </tr>
-    <tr>
-      <td>YOPE (Youth on Paschal Exodus)</td>
-      <td>A series of sessions that tackle the Paschal Exodus. The participants should have attended the Youth Encounter (Virac Model.)</td>
-      <td>Those who have undergone Youth Encounter</td>
-      <td>13 consecutive weeks + 3 days retreat (Kerygmatic Retreat)</td>
-      <td>Php 80.00/kit</td>
-    </tr>
-    <tr>
-      <td>Arise</td>
-      <td>4-day Seminar Workshop that is intended to let the participants understand the Youth Ministry, its components, phases, stages, etc.</td>
-      <td>Parish Youth Leader/Campus Minister/Parish Lay Leaders</td>
-      <td>4 days</td>
-      <td>Php 80.00/kit</td>
-    </tr>
-    <tr>
-      <td>Journey-FSW</td>
-      <td>A 3-day Seminar workshop that is intended to help the youth leaders be more organized in preparing and conducting activities and programs for their youth</td>
-      <td>Parish Youth/Campus Ministry</td>
-      <td>3 days</td>
-      <td>Php 80.00/kit</td>
-    </tr>
-    <tr>
-      <td>YE-FSW</td>
-      <td>A 4-day Seminar Workshop for aspiring facilitators who attended and completed the Youth Encounter (Virac model) conducted by the AYC-Formation Team</td>
-      <td>Those who have undergone YE (Virac Model) conducted by the AYC-FT</td>
-      <td>4/5 days</td>
-      <td>Php 80.00/kit</td>
-    </tr>
-  </tbody>
+  <tr>
+    <td>Arise</td>
+    <td>4-day Seminar Workshop that is intended to let the participants understand the Youth Ministry, its components, phases, stages, etc.</td>
+    <td>Parish Youth Leader/Campus Minister/Parish Lay Leaders</td>
+    <td>4 days</td>
+    <td>Php 80.00/kit</td>
+  </tr>
+  <tr>
+    <td>Bible Camp</td>
+    <td>A camp module that tackles the basic things about the Bible. Aims to help the participants to get into themselves and reflect on it by going through the 12 station called A Travel to the Holy Land.</td>
+    <td>Parish Youth/Campus Ministry</td>
+    <td>2-3 days / 3 consecutive weeks (2 sessions)</td>
+    <td>Php 80.00/kit</td>
+  </tr>
+  <tr>
+    <td>Bibliodrama</td>
+    <td>Aims to help the participants to get into themselves and reflect on it by going through the 12 station called A Travel to the Holy Land.</td>
+    <td>Grade 8 and above</td>
+    <td>2-3 days / 3 consecutive weeks (2 sessions)</td>
+    <td>Php 80.00/kit</td>
+  </tr>
+  <tr>
+    <td>Hands Recollection</td>
+    <td>A module that is intended to let the young people reflect about themselves, their relationship towards people around them and how it affects being who they are; that God never intended man to be alone</td>
+    <td>Grade 7 & above</td>
+    <td>1 day</td>
+    <td>Php 40.00/kit</td>
+  </tr>
+  <tr>
+    <td>Journey-FSW</td>
+    <td>A 3-day Seminar workshop that is intended to help the youth leaders be more organized in preparing and conducting activities and programs for their youth</td>
+    <td>Parish Youth/Campus Ministry</td>
+    <td>3 days</td>
+    <td>Php 80.00/kit</td>
+  </tr>
+  <tr>
+    <td>Journey Recollection</td>
+    <td>A recollection module that is guided by the story of the two disciples going to a village called Emmaus. This module aims to help the participants reflect on their everyday journey as an individual and how they relate to people they meet on the road.</td>
+    <td>Grade 9 & above</td>
+    <td>1 day</td>
+    <td>Php 40.00/kit</td>
+  </tr>
+  <tr>
+    <td>Kerygmatic Retreat</td>
+    <td>A scripture-based retreat module which serves as the culminating activity of those who completed the Youth Encounter 2 also known as Youth on Paschal Exodus (YOPE)</td>
+    <td>Those who have undergone YOPE</td>
+    <td>4 days</td>
+    <td>Php 80.00/kit</td>
+  </tr>
+  <tr>
+    <td>LAKBAY-KALIS</td>
+    <td>A series of sessions that aim to make the participant understand the Journey of the Youth in the Parish - Kabataang Lingkod ng Inang Simbahan (KaLIS)</td>
+    <td>Parish Youth/Campus Ministry</td>
+    <td>13 consecutive weeks / 3 days</td>
+    <td>Php 80.00/kit</td>
+  </tr>
+  <tr>
+    <td>Life is a Gift Recollection</td>
+    <td>A scripture-based module that aims to let the young people appreciate life and make them realize that life Grade 10 or Grade 12 is really a gift from God.</td>
+    <td>Grade 10 or Grade 12</td>
+    <td>1 day</td>
+    <td>Php 40.00/kit</td>
+  </tr>
+  <tr>
+    <td>Pencil Retreat</td>
+    <td>2-day scripture-based retreat module, developed by Rev. Fr. Glenn Cantos and the youth ministers of Lipa, that aims to let "all the young people who will undergo this formation understand and experience deeply God's loving compassion and bring you to a greater appreciation of a special gift that He has given you: the gift of life! (Most. Rev. Rolando J. Tria Tirona, OCD, DD - Bishop Chairman-ECY 1999)"</td>
+    <td>Grade 10 & above</td>
+    <td>2 days</td>
+    <td>Php 80.00/kit</td>
+  </tr>
+  <tr>
+    <td>Rich Young Man Retreat</td>
+    <td>1-2-day scripture-based module that focused on the appreciation of God-given talents, friends and God Rich Young Man Retreat Himself over the material things the world is offering right now.</td>
+    <td>Grade 12 & above</td>
+    <td>2 days</td>
+    <td>Php 80.00/kit</td>
+  </tr>
+  <tr>
+    <td>Samaritan Recollection</td>
+    <td>A scripture-based module that seeks to understand the story of the Samaritan woman and the leper and how Jesus works in their life as how Jesus works in our life today.</td>
+    <td>Those who have undergone different formation modules / 3rd year college to young professionals.</td>
+    <td>1 day</td>
+    <td>Php 40.00/kit</td>
+  </tr>
+  <tr>
+    <td>Treasure of Joy Recollection</td>
+    <td>A non-scripture based module that aims to help the participants discover their own treasure and make them reflect on it</td>
+    <td>Grade 6 and below</td>
+    <td>1 day</td>
+    <td>Php 40.00/kit</td>
+  </tr>
+  <tr>
+    <td>YE-FSW</td>
+    <td>A 4-day Seminar Workshop for aspiring facilitators who attended and completed the Youth Encounter (Virac model) conducted by the AYC-Formation Team</td>
+    <td>Those who have undergone YE (Virac Model) conducted by the AYC-FT</td>
+    <td>4/5 days</td>
+    <td>Php 80.00/kit</td>
+  </tr>
+  <tr>
+    <td>YOPE (Youth on Paschal Exodus)</td>
+    <td>A series of sessions that tackle the Paschal Exodus. The participants should have attended the Youth Encounter (Virac Model.)</td>
+    <td>Those who have undergone Youth Encounter</td>
+    <td>13 consecutive weeks + 3 days retreat (Kerygmatic Retreat)</td>
+    <td>Php 80.00/kit</td>
+  </tr>
+  <tr>
+    <td>Youth Encounter (Virac Model)</td>
+    <td>3-day scripture-based formation program under the supervision of the CBCP-ECY that seeks to form the youth and those working with the youth into community builders for the church and the society.</td>
+    <td>16yrs old & above</td>
+    <td>3 days</td>
+    <td>Php 80.00/kit</td>
+  </tr>
+</tbody>
 </table>
 </div>
 </body>

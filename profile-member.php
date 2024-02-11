@@ -216,7 +216,7 @@ if ($result->num_rows > 0) {
     // Profile cards
     echo "<div class='profile-card'>";
     echo "<div class='profile-label'>Full Name:</div>";
-    echo "<div class='profile-info' id='profileFullName'>" . $row["name"] . "</div>";
+    echo "<div class='profile-info' id='profileFullName'>" . $row["firstname"] . "</div>";
     echo "</div>";
 
     echo "<div class='profile-card'>";
@@ -263,7 +263,7 @@ if ($result->num_rows > 0) {
     echo "<form class='edit-form' id='editProfileForm'>";
     echo "<div class='form-group'>";
     echo "<label for='fullName'>Full Name:</label>";
-    echo "<input type='text' class='form-control' id='fullName' value='" . $row["name"] . "'>";
+    echo "<input type='text' class='form-control' id='firstName' value='" . $row["firstname"] . "'>";
     echo "</div>";
     echo "<div class='form-group'>";
     echo "<label for='username'>Username:</label>";

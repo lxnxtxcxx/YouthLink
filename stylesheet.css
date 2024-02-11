@@ -10,7 +10,7 @@ body {
 }
 
 .navbar {
-    background-color: #7FC7D9;
+    background-color: #ddac09;
 }
 
 .navbar-brand {
@@ -23,7 +23,7 @@ body {
 
 .footer {
 	position: relative;
-	background-color: #f6be00;
+	background-color: #ddac09;
 	color: #ffffff;
 	padding: 5px 0;
 	text-align: center;

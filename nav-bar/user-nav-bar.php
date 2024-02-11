@@ -17,7 +17,7 @@
 				<?php echo $row["firstname"] ?>
 			</a>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<a class="dropdown-item" href="<?php echo ($row["organization"] === 'admin') ? 'profile-member.php' : 'profile_client.php'; ?>">Profile</a>
+				<a class="dropdown-item" href="profile.php">Profile</a>
 				<a class="dropdown-item" href="<?php echo ($row["organization"] === 'admin') ? 'appointment_list.php' : 'appointment-client.php'; ?>">Appointment</a>
 
 				<!-- Hide Files link if org = 'admin' -->

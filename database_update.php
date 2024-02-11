@@ -22,9 +22,8 @@ if (!isset($_SESSION['id'])) {
 $id = $_SESSION['id'];
 
 // Get updated data from AJAX request
-$fullName = $_POST['fullName'];
-$username = $_POST['username'];
-$organization = $_POST['organization'];
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
 $vicariate = $_POST['vicariate'];
 $parish = $_POST['parish'];
 $email = $_POST['email'];
@@ -32,7 +31,7 @@ $contactNumber = $_POST['contactNumber'];
 $password = $_POST['password']; // Hash the password before storing it in the database
 
 // Update user data in the database
-$sql = "UPDATE user_data SET name='$fullName', username='$username', organization='$organization', vicariate='$vicariate', parish='$parish', email='$email', cnumber='$contactNumber', password='$password' WHERE id=$id";
+$sql = "UPDATE user_data SET firstname='$firstname', lastname='$lastname', vicariate='$vicariate', parish='$parish', email='$email', cnumber='$contactNumber', password='$password' WHERE id=$id";
 
 if ($conn->query($sql) === TRUE) {
     echo "Profile updated successfully.";

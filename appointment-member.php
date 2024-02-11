@@ -290,22 +290,22 @@ h2{
             <div class="form-group">
               <label for="dropdown">Event:</label>
               <select id="dropdown" name="event" class="form-control" required>
-                <option value="Journey Recollection">Journey Recollection</option>
-                <option value="Samaritan Recollection">Samaritan Recollection</option>
-                <option value="Rich Young Man Retreat">Rich Young Man Retreat</option>
-                <option value="Life is a Gift Recollection">Life is a Gift Recollection</option>
-                <option value="Treasure of Joy Recollection">Treasure of Joy Recollection</option>
-                <option value="Youth Encounter">Youth Encounter</option>
-                <option value="Pencil Retreat">Pencil Retreat</option>
-                <option value="Kerygmatic Retreat">Kerygmatic Retreat</option>
+                <option value="Arise">Arise</option>
                 <option value="Bible Camp">Bible Camp</option>
                 <option value="Bibliodrama">Bibliodrama</option>
-                <option value="LAKBAY-KaLIS">LAKBAY-KaLIS</option>
-                <option value="YOPE (Youth On Paschal Exodus)">YOPE (Youth On Paschal Exodus)</option>
-                <option value="Arise">Arise</option>
+                <option value="Bibliodrama">Hands Recollection</option>
                 <option value="Journey – FSW">Journey – FSW</option>
+                <option value="Journey Recollection">Journey Recollection</option>
+                <option value="Kerygmatic Retreat">Kerygmatic Retreat</option>
+                <option value="LAKBAY-KaLIS">LAKBAY-KaLIS</option>
+                <option value="Life is a Gift Recollection">Life is a Gift Recollection</option>
+                <option value="Pencil Retreat">Pencil Retreat</option>
+                <option value="Rich Young Man Retreat">Rich Young Man Retreat</option>
+                <option value="Samaritan Recollection">Samaritan Recollection</option>
+                <option value="Treasure of Joy Recollection">Treasure of Joy Recollection</option>
                 <option value="YE - FSW">YE - FSW</option>
-
+                <option value="Youth Encounter">Youth Encounter</option>
+                <option value="YOPE (Youth On Paschal Exodus)">YOPE (Youth On Paschal Exodus)</option>
               </select>
             </div>
             <div class="form-group">

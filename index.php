@@ -19,17 +19,6 @@
 
   <style>
     /* Custom styles */
-    .navbar {
-      background-color: #f6be00;
-    }
-
-    .navbar-brand {
-      color: #fff;
-    }
-
-    .nav-link {
-      color: #fff;
-    }
 
     .jumbotron {
       align-self: center;
@@ -311,8 +300,6 @@
               </h1>
             </div>
             <div class="form-group sign-up">
-              <h2 class="font-size-12"> <a href="Admin_Login_page.html">Continue as Admin</a>
-              </h2>
             </div>
           </form>
         </div>
@@ -329,6 +316,7 @@
             <div class="form-group">
               <h2>Sign Up</h2>
             </div>
+            
             <div class="form-group row justify-content-between">
               <label for="firstname" class="col-sm-2 col-form-label font-color-main">First Name</label>
               <div class="col-sm-9">
@@ -409,19 +397,21 @@
                 </select>
               </div>
             </div>
+
             <div class="form-group  row justify-content-between">
               <label for="username" class="col-sm-2 col-form-label font-color-main">Username </label>
               <div class="col-sm-9">
                 <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required>
+              </div>
+            </div>
 
-              </div>
-            </div>
-            <div class="form-group  row justify-content-between">
-              <label for="password" class="col-sm-2 col-form-label font-color-main">Password</label>
+            <div class="form-group row justify-content-between">
+              <label for="password" class="col-sm-2 col-form-label primary-color-txt">Password</label>
               <div class="col-sm-9">
-                <input type="text" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required minlength="8">
               </div>
             </div>
+
             <div class="form-group d-block w-100 text-center">
               <button type="submit" class="btn btn-outline-primary mx-auto" style="width: 500px;">Sign Up</button>
             </div>
