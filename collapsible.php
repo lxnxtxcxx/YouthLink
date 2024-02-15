@@ -39,16 +39,18 @@ if ($result->num_rows > 0) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>File Storage</title>
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="stylesheet.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   <style>
     /* Custom styles */
      body {
       background-color: #DCF2F1;
       color: #333333;
       margin-bottom: 60px;
+    }
+
+    .navbar {
+      background-color: #F6BE00;
     }
     .navbar-brand {
       color: white;
@@ -57,57 +59,43 @@ if ($result->num_rows > 0) {
       color: white;
     }
 
-    .file-container {
-      margin-top: 80px;
-      border: 1px solid #ccc;
-      padding: 90px;
-      background-color: #fff;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .container-title {
-      font-size: 24px;
-      color: #212529;
-      margin-bottom: 10px;
-    }
-
-    .file-list {
-      list-style-type: square;
-      padding-left: 20px;
-    }
-
-    .file-list-item {
-      color:#212529;
-      margin-bottom: 5px;
-    }
-
-    .file-link {
-      font-size: 18px;
-      color: #212529;
-      text-decoration: none;
-      font-weight: 100%;
-    }
-
     .collapsible {
     background-color: #eee;
+    margin-left:42.5%;
+    margin-top:10px;
     color: #444;
     cursor: pointer;
-    padding: 18px;
-    width: 100%;
+    padding: 1px;
+    width: 15%;
     border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
+    text-align: center;
+    outline: none;  
+    font-size: 25px;
+    margin-bottom: 20px; /* Add some margin between buttons */
   }
 
   .content {
     padding: 0 18px;
     display: none;
     overflow: hidden;
-    background-color: #f9f9f9;
+    margin-left: 42.5%;
+    background-color: #fff;
+    font-style:italic;
+    
   }
 
+    .file-list-item {
+      color:#212529;
+      list-style-type: square;
+      margin-bottom: 3px;
+    }
+
+    .file-link {    
+      font-size: 18px;
+      color: #212529;
+      text-decoration: none;
+      font-weight: 100%;
+    }
 
   </style>
 </head>
@@ -120,13 +108,17 @@ if ($result->num_rows > 0) {
     
 
   <!-- Files Section -->
-    <section class="section">
-    <div class="container">
-      <div class="row">
-      <div class="col-md-4 mx-auto">
-          <div class="file-container">
-            <h2 class="container-title">Hand outs</h2>
-            <ul class="file-list">
+        <button class="collapsible">Form</button>
+        <div class="content">
+              <li class="file-list-item">
+        <a href="https://docs.google.com/document/d/1SScIDHAjlfQmVnIFyj1AJHHU84zaoja2/edit?usp=sharing&ouid=117690929165865719807&rtpof=true&sd=true" class="file-link" target="_blank">
+          Participants List Form
+        </a>
+      </li>
+        </div>
+
+        <button class="collapsible">Handouts</button>
+        <div class="content">
               <li class="file-list-item">
         <a href="https://drive.google.com/drive/folders/1GNUyMN1wHuMKQfOBefWpw5FKXbAMPdBo?usp=drive_link" class="file-link" target="_blank">
           7 Steps
@@ -187,14 +179,10 @@ if ($result->num_rows > 0) {
         <a href="https://drive.google.com/drive/folders/1cwBRStWXz-SA2E-ObEduyAkSljttd2AI?usp=drive_link" class="file-link" target="_blank">
           Youth Encounter
         </a>
-            </ul>
-          </div>
         </div>
 
-        <div class="col-md-4 mx-auto">
-          <div class="file-container">
-            <h2 class="container-title">Music</h2>
-            <ul class="file-list">
+        <button class="collapsible">Music</button>
+        <div class="content">
         <li class="file-list-item">
         <a href="https://drive.google.com/drive/folders/1afq9UbYjDOEvVAK91Km6_WODahDDw4xg?usp=drive_link" class="file-link" target="_blank">
           Arise
@@ -215,23 +203,30 @@ if ($result->num_rows > 0) {
         <a href="https://drive.google.com/drive/folders/19nWtnBKVqVek8xIkKAqjrTeS8OHVcsD8?usp=drive_link" class="file-link" target="_blank">
           Youth Encounter
         </a>
-            </ul>
-          </div>
         </div>
-        <div class="col-md-4 mx-auto">
-          <div class="file-container">
-            <h2 class="container-title">Forms</h2>
-            <ul class="file-list">
-              <li class="file-list-item">
-        <a href="https://docs.google.com/document/d/1SScIDHAjlfQmVnIFyj1AJHHU84zaoja2/edit?usp=sharing&ouid=117690929165865719807&rtpof=true&sd=true" class="file-link" target="_blank">
-          Participants List Form
-        </a>
-      </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
+        <script>
+        // Get all collapsible buttons and content
+        const collapsibleBtns = document.querySelectorAll('.collapsible');
+        const contents = document.querySelectorAll('.content');
+
+        // Add event listener to each button
+        collapsibleBtns.forEach((btn, index) => {
+            btn.addEventListener('click', function() {
+            // Toggle display for the corresponding content section
+            if (contents[index].style.display === 'block') {
+                contents[index].style.display = 'none';
+            } else {
+                // Hide other content sections before displaying this one
+                contents.forEach((content, i) => {
+                if (i !== index) {
+                    content.style.display = 'none';
+                }
+                });
+                contents[index].style.display = 'block';
+            }
+            });
+        });
+        </script>
 </body>
 </html>

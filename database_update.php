@@ -22,8 +22,8 @@ if (!isset($_SESSION['id'])) {
 $id = $_SESSION['id'];
 
 // Get updated data from AJAX request
-$firstname = $_POST['firstname'];
-$lastname = $_POST['lastname'];
+$firstname = $_POST['firstName'];
+$lastname = $_POST['lastName'];
 $vicariate = $_POST['vicariate'];
 $parish = $_POST['parish'];
 $email = $_POST['email'];
@@ -31,14 +31,18 @@ $contactNumber = $_POST['contactNumber'];
 $password = $_POST['password']; // Hash the password before storing it in the database
 
 // Update user data in the database
-$sql = "UPDATE user_data SET firstname='$firstname', lastname='$lastname', vicariate='$vicariate', parish='$parish', email='$email', cnumber='$contactNumber', password='$password' WHERE id=$id";
+$stmt = $conn->prepare("UPDATE user_data SET firstname=?, lastname=?, vicariate=?, parish=?, email=?, cnumber=?, password=? WHERE id=?");
+$stmt->bind_param("sssssssi", $firstname, $lastname, $vicariate, $parish, $email, $contactNumber, $password, $id);
 
-if ($conn->query($sql) === TRUE) {
-    echo "Profile updated successfully.";
-} else {
+$stmt->execute();
+
+if ($stmt->error) {
     echo "Error updating profile: " . $conn->error;
+
+} else {
+    echo "Profile updated successfully.";
 }
 
 // Close the database connection
-$conn->close();
+$stmt->close();
 ?>

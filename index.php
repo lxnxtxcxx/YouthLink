@@ -30,11 +30,11 @@
     }
 
     .jumbotron h1 {
-      font-size: 48px;
+      font-size: 50px;
     }
 
     .jumbotron p {
-      font-size: 20px;
+      font-size: 100px;
       margin-bottom: 0;
     }
 
@@ -57,6 +57,7 @@
     .card-text {
       color: #777;
     }
+    
 
 
     /* Add animation class for fade-in effect */
@@ -116,28 +117,6 @@
       margin: auto;
     }
 
-    .card {
-      height: 400px;
-      background-color: rgba(0, 0, 0, 0.4);
-      border-radius: 4px;
-      color: white;
-      font-size: 40px;
-      margin: 10px;
-      flex: 800px 0 0;
-    }
-
-    .card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      background-size: cover;
-    }
-
-    .cards-wrapper {
-      display: flex;
-      transition: ease 0.5s;
-    }
-
     .dots-wrapper {
       display: none;
       justify-content: center;
@@ -158,7 +137,7 @@
       width: 100%;
       height: 300px;
       overflow: hidden;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     .jumbotron-wrapper img {
@@ -200,7 +179,7 @@
     .footer-bottom-text {
       padding: 20px;
       bottom: 0;
-      background-color: #f6be00;
+      background-color: #f7cd45;
     }
 
     .need-help {
@@ -242,7 +221,7 @@
 
     .carousel-item {
       height: 600px;
-      width: 900px;
+      width: 1070px;
     }
 
     .carousel-item img {
@@ -316,7 +295,6 @@
             <div class="form-group">
               <h2>Sign Up</h2>
             </div>
-            
             <div class="form-group row justify-content-between">
               <label for="firstname" class="col-sm-2 col-form-label font-color-main">First Name</label>
               <div class="col-sm-9">
@@ -425,7 +403,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="index.html">You✞hLink</a>
+      <a class="navbar-brand" href="index.php">You✞hLink</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -505,6 +483,7 @@
           <div class="footer-card-label">Call Us</div>
           <div>+63 912 345 6789</div>
         </div>
+        
         <div class="footer-card">
           <div class="footer-card-label">Opening Hours</div>
           <div><span class="heavy">Mon-Fri:</span> 9:00 AM - 5:00 PM</div>

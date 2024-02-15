@@ -39,6 +39,7 @@ if ($result->num_rows > 0) {
   <title>YouthLink</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheet.css">
     <style>
     
     /* Custom styles */
@@ -46,9 +47,7 @@ if ($result->num_rows > 0) {
       background-color: #FFFAA0;
       font-family: Arial, sans-serif;
     }
-    .navbar {
-      background-color: #F6BE00;
-    }
+
     .navbar-brand {
       color: #fff;
     }
@@ -85,14 +84,7 @@ if ($result->num_rows > 0) {
     .card-text {
       color: #777;
     }
-    .footer {
-      background-color: #F6BE00;
-      color: #ffffff;
-      padding: 5px 0;
-      text-align: center;
-      bottom: 0;
-      width: 100%;
-    }
+
     /* Add animation class for fade-in effect */
     .fade-in {
       opacity: 0;
@@ -123,6 +115,51 @@ if ($result->num_rows > 0) {
     border: 2px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.display-area {
+      width: 100%;
+      max-width: 970px;
+      overflow-x: hidden;
+      margin: auto;
+    }
+
+    
+    .dots-wrapper {
+      display: none;
+      justify-content: center;
+      margin: auto;
+    }
+
+    .wrapper {
+      max-width: 1110px;
+      margin-inline: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .jumbotron-wrapper {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .jumbotron-wrapper img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .jumbotron-wrapper .jumbotron-text {
+      position: relative;
+      top: 30%;
+      left: 8%;
+      z-index: 4;
+    }
 
   </style>
 </head>
@@ -144,6 +181,8 @@ if ($result->num_rows > 0) {
 
   <!-- Bootstrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
     
 window.addEventListener('scroll', animateOnScroll);

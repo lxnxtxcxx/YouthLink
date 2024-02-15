@@ -84,6 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <title>Appointment</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheet.css">
 
   <style>
     /* Custom styles */
@@ -93,9 +94,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       margin-bottom: 60px;
     }
 
-    .navbar {
-      background-color: #92C7CF;
-    }
     .navbar-brand {
       color: #fff;
     }
@@ -130,6 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     .form-group {
   margin-bottom: 5px; /* Add space between form elements */
+  margin-left: 5px;
 }
 
 .form-control {
@@ -233,39 +232,9 @@ h2{
     include 'header.php';
     include 'nav-bar/user-nav-bar.php';
   ?>
-  <!-- <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="index-member.php">YouthLink</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index-member.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="events-member.php">Events</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="files-member.php">Files</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="appointment-member.php">Appointment</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="profile-member.php"><?php echo $row["username"]?></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Sign Out</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
 
  <!-- Page Content -->
- <h2>Set an Appointment</h2>
+ <h2 class="pt-5">Set an Appointment</h2>
 <div class="custom-container">
  <div class="row">
     <div class="col-md-6">

@@ -83,6 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Appointment</title>
   <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="stylesheet.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
   <style>
@@ -91,10 +92,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       background-color: #f8f8f8;
       color: #333333;
       margin-bottom: 60px;
-    }
-
-    .navbar {
-      background-color: #F6BE00;
     }
     .navbar-brand {
       color: #fff;
@@ -122,14 +119,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 .custom-container {
       display: inline-block; /* Display containers side by side */
-      width: 100%; /* Set the width of each container (adjust as needed) */
+      width: 98%; /* Set the width of each container (adjust as needed) */
       margin: 1%; /* Add some margin to separate the containers */
       background-color: #f0f0f0; /* Background color of the containers */
       padding: 5px; /* Padding around the content inside the containers */
       box-sizing: border-box; /* Include padding in the width */
     }
+    
     .form-group {
   margin-bottom: 5px; /* Add space between form elements */
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 .form-control {
@@ -141,7 +142,7 @@ h1 {
 }
 
 h2 {
-  margin-top: 2px;
+  margin-top: 10px;
   margin-bottom: 2px;
 }
 h6 {
@@ -231,41 +232,11 @@ h2{
   <!-- Navigation bar -->
   <?php 
     include 'header.php'; 
-    include 'nav-bar/user-nav-bar.php';
+    include 'nav-bar/client-nav-bar.php';
   ?>
-  <!-- <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="index_client.php">YouthLink</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item ">
-            <a class="nav-link" href="index_client.php">Home</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="events-client.php">Events</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="files-client.php">Files</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="appointment-client.php">Appointment</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="profile_client.php"><?php echo $row["username"]?></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Sign Out</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
 
  <!-- Page Content -->
- <h2>Set an Appointment</h2>
+ <h2 class="">Set an Appointment</h2>
 <div class="custom-container">
  <div class="row">
     <div class="col-md-6">

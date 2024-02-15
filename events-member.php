@@ -91,7 +91,7 @@ th, td {
 }
 
 th {
-  background-color: #DAA520;
+  background-color: #f7cd45;
   color: white;
 }
 

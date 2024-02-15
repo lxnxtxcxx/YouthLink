@@ -143,30 +143,6 @@ $sql = "SELECT * FROM user_data WHERE id = $id";
     include '../header.php';
     include '../nav-bar/admin-nav-bar.php';
   ?>
-  <!-- <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" >You✞hLink</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item ">
-            <a class="nav-link" href="appointment_list.php">Appointment List</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="member_list.php">Member List</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="admin-profile.php"><?php echo $row["username"]?></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Sign Out</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
 
   <?php
       $result = $conn->query($sql);

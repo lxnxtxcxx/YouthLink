@@ -22,6 +22,9 @@ if (!isset($_SESSION['id'])) {
 
 $id = $_SESSION['id'];
 
+include 'header.php';
+include 'nav-bar/user-nav-bar.php';
+
 // Fetch data for the current user
 $sql = "SELECT * FROM user_data WHERE id = $id";
 $result = $conn->query($sql);
@@ -74,6 +77,7 @@ if ($result->num_rows > 0) {
 
     .profile-card {
       text-align: left;
+      margin-top: 25px;
       margin-bottom: 20px;
     }
 
@@ -83,10 +87,11 @@ if ($result->num_rows > 0) {
 
     .profile-info {
       margin-bottom: 10px;
+      text-indent: 30px;
     }
 
     .edit-button, .show-password-button {
-      background-color: #007bff;
+      background-color: #0077CC;
       color: #fff;
       border: none;
       padding: 8px 16px;
@@ -94,8 +99,8 @@ if ($result->num_rows > 0) {
       cursor: pointer;
     }
 
-    .edit-button:hover, .show-password-button:hover {
-      background-color: #0056b3;
+    .show-password-button:hover{
+      background-color: #fff;
     }
 
     .form-control {
@@ -127,91 +132,90 @@ if ($result->num_rows > 0) {
     .cancel-button:hover {
       background-color: #c82333;
     }
+   
 
   </style>
 </head>
 
 <body>
   <?php
-      include 'header.php';
-      include 'nav-bar/user-nav-bar.php';
 
-    $servername = "localhost";
-    $dbUsername = "root";
-    $dbPassword = "";
-    $dbname = "youthlink";
+      $servername = "localhost";
+      $dbUsername = "root";
+      $dbPassword = "";
+      $dbname = "youthlink";
 
     // Create connection
-    $conn = new mysqli($servername, $dbUsername, $dbPassword, $dbname);
+      $conn = new mysqli($servername, $dbUsername, $dbPassword, $dbname);
 
     // Check connection
-    if ($conn->connect_error) {
+      if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-    }
+      }
 
     // Check if 'id' is set in the session
-    if (!isset($_SESSION['id'])) {
-        echo "No user ID found in the session.";
+      if (!isset($_SESSION['id'])) {
+          echo "No user ID found in the session.";
         exit;
-    }
+      }
 
-    $id = $_SESSION['id'];
+      $id = $_SESSION['id'];
 
     // Fetch data for the current user
-    $sql = "SELECT * FROM user_data WHERE id = $id";
-    $result = $conn->query($sql);
+      $sql = "SELECT * FROM user_data WHERE id = $id";
+      $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
+      if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
+  ?> 
 
-    // Profile section
-        echo "<section class='section profile-section'>";
-        echo "<div class='container'>";
-        echo "<h2 class='section-title'>User Profile</h2>";
+    <!-- Profile Section -->
+    <section class="section profile-section pt-5">
+        <div class="container">
+            <h2 class="section-title pb-4">User Profile</h2>
 
-    // Profile cards
-        echo "<div class='profile-card'>";
-        echo "<div class='profile-label'>Username:</div>";
-        echo "<div class='profile-info' id='profileUsername'>" . $row["username"] . "</div>";
-        echo "</div>";
-        
-        echo "<div class='profile-card'>";
-        echo "<div class='profile-label'>Full Name:</div>";
-        echo "<div class='profile-info' id='profileFirstName'>" . $row["firstname"] . " " . $row["lastname"] . "</div>";
-        echo "</div>";
+            <div class="profile-card row">
+                <h5 class="profile-label col-sm-5">Username: <?php echo $row["username"]; ?></h5>
+                <div class="form-group col-sm-5 w-50 text-center">
+                <button class=" btn btn-outline-secondary" id="editProfileBtn" href="#" data-toggle="modal" data-target="#editProfile">Edit Profile</button>
+            </div>
+            </div>
 
-        echo "<div class='profile-card'>";
-        echo "<div class='profile-label'>Email Address:</div>";
-        echo "<div class='profile-info' id='profileEmail'>" . $row["email"] . "</div>";
-        echo "</div>";
+            <div class="profile-card row">
+                <div class="profile-label col-sm-2">Full Name:</div>
+                <div class="profile-info col-sm-9" id="profileName"><?php echo $row["firstname"] . " " . $row["lastname"]; ?></div>
+            </div>
 
-        echo "<div class='profile-card'>";
-        echo "<div class='profile-label'>Contact Number:</div>";
-        echo "<div class='profile-info' id='profileContactNumber'>" . $row["cnumber"] . "</div>";
-        echo "</div>";
+            <div class="profile-card row">
+                <div class="profile-label col-sm-2">Email Address:</div>
+                <div class="profile-info col-sm-9" id="profileEmail"><?php echo $row["email"]; ?></div>
+            </div>
 
-        echo "<div class='profile-card'>";
-        echo "<div class='profile-label'>Organization:</div>";
-        echo "<div class='profile-info' id='profileOrganization'>" . $row["organization"] . "</div>";
-        echo "</div>";
+            <div class="profile-card row ">
+                <div class="profile-label col-sm-2">Contact Number:</div>
+                <div class="profile-info col-sm-9" id="profileContact"><?php echo $row["cnumber"]; ?></div>
+            </div>
 
-        echo "<div class='profile-card'>";
-        echo "<div class='profile-label'>Vicariate:</div>";
-        echo "<div class='profile-info' id='profileVicariate'>" . $row["vicariate"] . "</div>";
-        echo "</div>";
+            <div class="profile-card row">
+                <div class="profile-label col-sm-2">Organization:</div>
+                <div class="profile-info col-sm-9" id="profileOrganization"><?php echo $row["organization"]; ?></div>
+            </div>
 
-        echo "<div class='profile-card'>";
-        echo "<div class='profile-label'>Parish:</div>";
-        echo "<div class='profile-info' id='profileParish'>" . $row["parish"] . "</div>";
-        echo "</div>";
+            <div class="profile-card row">
+                <div class="profile-label col-sm-2">Vicariate:</div>
+                <div class="profile-info col-sm-9" id="profileVicariate"><?php echo $row["vicariate"]; ?></div>
+            </div>
 
-        echo "<button class='edit-button' id='editProfileBtn' href='#' data-toggle='modal' data-target='#editProfile'>Edit Profile</button>";
+            <div class="profile-card row">
+                <div class="profile-label col-sm-2">Parish:</div>
+                <div class="profile-info col-sm-9" id="profileParish"><?php echo $row["parish"]; ?></div>
+            </div>
 
-        // Close profile section and container
-        echo "</div></section>";
-      ?> 
+            
+        </div>
+    </section>
 
-    <!-- Modal Sign Up Form-->
+    <!-- Modal Edit Form-->
     <div class="modal fade" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -257,10 +261,10 @@ if ($result->num_rows > 0) {
                 <div class="form-group row justify-content-between">
                     <label for="dropdownVicariate" class="col-sm-2 col-form-label font-color-main">Vicariate:</label>
                     <div class="col-sm-9">
-                        <select id="dropdownVicariate" name="vicariate" class="form-control" value="<?php echo "test" ?>">
+                        <select id="dropdownVicariate" name="vicariate" class="form-control">
                         <?php
                         $count = 1;
-                        while ($count <=  10) :;
+                        while ($count <=  14) :;
                         ?>
                             <option value="vicariate <?php echo $count; ?>">
                             vicariate <?php echo $count;
@@ -277,7 +281,7 @@ if ($result->num_rows > 0) {
                 <div class="form-group row justify-content-between">
                     <label for="dropdownParish" class="col-sm-2 col-form-label font-color-main">Parish:</label>
                     <div class="col-sm-9">
-                        <select id="dropdownParish" name="parish" class="form-control" value="<?php echo $row["parish"] ?>">
+                        <select id="dropdownParish" name="parish" class="form-control">
                         <?php
                         $all_parish_sql = "SELECT * FROM `parish`";
                         $all_parish = mysqli_query($conn, $all_parish_sql);
@@ -320,6 +324,7 @@ if ($result->num_rows > 0) {
         </div>
         </div>
   </div>
+
   <?php 
     } else {
         echo "No results found for the current user.";
@@ -327,62 +332,61 @@ if ($result->num_rows > 0) {
   ?>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
     $(document).ready(function () {
 
-        // Save Profile button click event
-        $("#saveProfileBtn").click(function () {
-            // Collect updated data
-            var formData = {
-                action: 'updateProfile',
-                firstName: $("#firstname").val(),
-                lastName: $("#lastName").val(),
-                vicariate: $("#dropdownVicariate").val(),
-                parish: $("#dropdownParish").val(),
-                email: $("#email").val(),
-                contactNumber: $("#contactNumber").val(),
-                password: $("#password").val(),
-            };
+    // Save Profile button click event
+    $("#saveProfileBtn").click(function () {
+        // Collect updated data
+        var formData = {
+            action: 'updateProfile',
+            firstName: $("#firstname").val(),
+            lastName: $("#lastname").val(),
+            vicariate: $("#dropdownVicariate").val(),
+            parish: $("#dropdownParish").val(),
+            email: $("#email").val(),
+            contactNumber: $("#cnumber").val(),
+            password: $("#password").val(),
+        };
 
-            // Send data to server using AJAX
-            $.ajax({
-                type: "POST",
-                url: "database_update.php", // Replace with the actual file name
-                data: formData,
-                success: function (response) {
-                    // Display server response
-                    alert(response);
+        // Send data to server using AJAX
+        $.ajax({
+            type: "POST",
+            url: "database_update.php", // Replace with the actual file name
+            data: formData,
+            success: function (response) {
+                // Display server response
+                alert(response);
 
-                    // Update the displayed profile information
-                    $(".profile-info").toggle();
-                    $(".edit-form").toggle();
-                },
-                error: function (error) {
-                    // Handle errors
-                    console.log(error);
-                }
-            });
-        });
-
-        // Cancel Edit button click event
-        $("#cancelEditBtn").click(function () {
-            // Toggle back to view mode without saving changes
-            $(".profile-info").toggle();
-            $(".edit-form").toggle();
-        });
-
-        // Show Password button click event
-        $("#showPasswordBtn").click(function () {
-            var passwordField = $("#password");
-            var passwordType = passwordField.attr('type');
-
-            // Toggle between password and text
-            passwordField.attr('type', passwordType === 'password' ? 'text' : 'password');
+                // Update the displayed profile information
+                location.reload(true);
+                window.location.href("profile.php");
+            },
+            error: function (error) {
+                // Handle errors
+                console.log(error);
+            }
         });
     });
+
+    // Cancel Edit button click event
+    $("#cancelEditBtn").click(function () {
+        location.reload();
+    });
+
+    // Show Password button click event
+    $("#showPasswordBtn").click(function () {
+        var passwordField = $("#password");
+        var passwordType = passwordField.attr('type');
+
+        // Toggle between password and text
+        passwordField.attr('type', passwordType === 'password' ? 'text' : 'password');
+    });
+});
 </script>
 
 </body>

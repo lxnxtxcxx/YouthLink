@@ -89,7 +89,7 @@ th, td {
 }
 
 th {
-  background-color: #DAA520;
+  background-color: #f7cd45;
   color: white;
 }
 
@@ -103,40 +103,10 @@ tr:hover {
   <!-- Navigation bar -->
   <?php 
     include 'header.php'; 
-    include 'nav-bar/user-nav-bar.php';
+    include 'nav-bar/client-nav-bar.php';
   ?>
-  <!-- <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="index_client.php">YouthLink</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index_client.php">Home</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="events-client.php">Events</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="files-client.php">Files</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="appointment-client.php">Appointment</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="profile_client.php"><?php echo $row["username"]?></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Sign Out</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
 
-<div class="table-container">
+<div class="table-container mt-5">
   <table>
     <thead>
       <tr>
